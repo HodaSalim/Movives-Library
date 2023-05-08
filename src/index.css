@@ -20,7 +20,16 @@ body {
   background-color: var(--background-yellow);
   font-family: var(--body);
 }
-
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  opacity: 0.8;
+  z-index: 1001;
+}
 .header {
   display: flex;
   justify-content: space-between;
@@ -50,6 +59,46 @@ body {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #a3a5d7;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  position: fixed;
+  left: 25%;
+  z-index: 1002;
+}
+
+.movie-form * {
+  padding: 0.5rem;
+}
 .hidden {
-  display: none;
+  visibility: hidden;
+}
+
+.movies-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 2rem;
+}
+.movie-card {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.movie-card * {
+  padding: 1rem;
+}
+.movie-poster {
+  width: 50%;
+}
+
+.star {
+  font-variation-settings: "FILL" 1, "wght" 200, "GRAD" 1, "opsz" 48;
+  color: gold;
 }

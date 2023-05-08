@@ -1,8 +1,6 @@
+import { onVisibility } from "./utils/onVisiblity";
+
 export function Header() {
-  function onVisibility() {
-    const form = document.querySelector(".movie-form");
-    form.classList.toggle("hidden");
-  }
   return (
     <header className="header">
       <div className="title">

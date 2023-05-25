@@ -1,4 +1,9 @@
-[] Render the movies list in the MoviesList component using MovieCard componenet
-[] Complete the design for the newmovie from
-[] Implement adding a new movie functionality
-[] Complete the design for the movies layout
+[x] Render the movies list in the MoviesList component using MovieCard componenet
+[x] Complete the design for the newmovie from
+[x] Implement adding a new movie functionality
+[x] Complete the design for the movies layout
+[] Add filteration UI
+[] Add functionality for filter by rating
+[] Add functionality for filter by title
+[] Make Layout for movie preview
+[] Add onclick functionality on movie card to show movie preview

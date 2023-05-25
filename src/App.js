@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useCallback } from "react";
+import { Header } from "./components/Header";
+import { useState } from "react";
+import movies from "./data/data.json";
+import { NewMovie } from "./components/NewMovie";
+import { MoviesList } from "./components/MoviesList";
+import { onVisibility } from "./components/utils/onVisiblity";
+import { Filters } from "./components/Filters";
 
 function App() {
+  const [moviesList, setMoviesList] = useState(movies);
+
+  const onFilter = useCallback((query, stars) => {
+    console.log(typeof stars);
+    const filteredList = movies
+      .filter((movie) => movie.title.toLowerCase().includes(query))
+      .filter((movie) => (stars ? movie.rating === Number(stars) : movie));
+
+    setMoviesList(filteredList);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <NewMovie setMoviesList={setMoviesList} />
+      <Filters onFilter={onFilter} />
+      <MoviesList movies={moviesList} />
+      <div className="overlay hidden" onClick={onVisibility}></div>
+    </>
   );
 }
 

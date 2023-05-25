@@ -1,4 +1,4 @@
-import { onVisibility } from "./utils/onVisiblity";
+import { onVisibility } from "../utils/onVisiblity";
 export function NewMovie({ setMoviesList }) {
   const onMovieAdd = (e) => {
     e.preventDefault();
@@ -29,6 +29,8 @@ export function NewMovie({ setMoviesList }) {
         <option>2</option>
         <option>1</option>
       </select>
+      <label>Trailer Link</label>
+      <input name="trailer" />
       <button onSubmit={onMovieAdd}>button</button>
     </form>
   );

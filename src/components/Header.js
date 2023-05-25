@@ -1,4 +1,4 @@
-import { onVisibility } from "./utils/onVisiblity";
+import { onVisibility } from "../utils/onVisiblity";
 
 export function Header() {
   return (
